@@ -1,5 +1,10 @@
 module.exports = {
-  waituntil: function(params) {
+  wait: function(params){
+    setTimeout(function(){
+      tukang.next()
+    },parseInt(params[0])*1000)
+  },
+  waitfor: function(params) {
         function _waituntil(callback, timeoutcallback, age) {
             if (!age) age = 0
             var match = params[0] == 'contains' ? params[0] : 'match'
@@ -12,7 +17,7 @@ module.exports = {
             } else
                 setTimeout(function() {
 
-                    var contain = tukang.web.page.evaluate(function(text, match) {
+                    var contain = page.evaluate(function(text, match) {
                         if (typeof core !='undefined') {
                             return jQuery("*:" + match + "(" + text + ")").length
                         } else {

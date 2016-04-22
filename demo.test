@@ -1,7 +1,5 @@
-open http://neo.sandbox.loket.com/login
-fill username thisisnotvaliduser
-fill password contactyoutadmin
-click "Sign In"
-waituntil "Create New Event"
-click "Create New Event"
-
+it "should be login member.id officer"
+open http://dev.member.id
+fill #username saskia
+fill #password x123123x
+wait 10
